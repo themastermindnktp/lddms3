@@ -8,7 +8,7 @@
 #include "template.cpp"
 
 namespace Constant {
-    const string CONFIG_FILE = "config.txt";
+    const string CONFIG_FILE_NAME = "config.txt";
 }
 
 #endif

@@ -14,24 +14,24 @@ namespace Config {
 
     string output;
 
-    int n = -1;
     int l = -1;
-    int d = -1;
+    int d1 = -1;
+    int d2 = -1;
 
     void load_config_from_file() {
-        ifstream input_file(Constant::CONFIG_FILE);
-        while (input_file.good()) {
+        ifstream config_file(Constant::CONFIG_FILE_NAME);
+        while (config_file.good()) {
             string key;
-            input_file >> key;
+            config_file >> key;
             transform(key.begin(), key.end(), key.begin(), ::toupper);
-            if (key == "INPUT:") input_file >> input;
-            else if (key == "OUTPUT:") input_file >> output;
-            else if (key == "N:") input_file >> n;
-            else if (key == "L:") input_file >> l;
-            else if (key == "D:") input_file >> d;
+            if (key == "INPUT:") config_file >> input;
+            else if (key == "OUTPUT:") config_file >> output;
+            else if (key == "L:") config_file >> l;
+            else if (key == "D1:") config_file >> d1;
+            else if (key == "D2:") config_file >> d2;
         }
 
-        if (input.empty() || l == -1 || d == -1)
+        if (input.empty() || l == -1 || d1 == -1 || d2 == -1)
         {
             cerr << "Config is missing field(s)!\n";
             exit(0);
@@ -40,11 +40,11 @@ namespace Config {
     }
 
     void print_config() {
-    	cout << "Input:\t\t" << input << "\n";
-    	cout << "Output:\t\t" << (output.empty() ? "standard output" : output) << "\n";
-    	cout << "n:\t\t" << (n == -1 ? "Unknown" : to_string(n)) << "\n";
-    	cout << "l:\t\t" << l << "\n";
-    	cout << "d:\t\t" << d << "\n";
+    	cout << "Input:\t\t\t" << input << "\n";
+    	cout << "Output:\t\t\t" << (output.empty() ? "standard output" : output) << "\n";
+    	cout << "l:\t\t\t" << l << "\n";
+    	cout << "d1:\t\t\t" << d1 << "\n";
+    	cout << "d2:\t\t\t" << d2 << "\n";
     }
 
 }
