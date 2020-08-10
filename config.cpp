@@ -38,11 +38,11 @@ namespace Config {
     }
 
     void print_config() {
-    	cout << "Input:\t\t\t" << input << "\n";
-    	cout << "Output:\t\t\t" << (output.empty() ? "standard output" : output) << "\n";
-    	cout << "l:\t\t\t" << l << "\n";
-    	cout << "d1:\t\t\t" << d1 << "\n";
-    	cout << "d2:\t\t\t" << d2 << "\n";
+    	cerr << "Input:\t\t\t" << input << "\n";
+    	cerr << "Output:\t\t\t" << (output.empty() ? "standard output" : output) << "\n";
+    	cerr << "l:\t\t\t" << l << "\n";
+    	cerr << "d1:\t\t\t" << d1 << "\n";
+    	cerr << "d2:\t\t\t" << d2 << "\n";
     }
 }
 

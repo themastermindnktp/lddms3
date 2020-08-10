@@ -14,9 +14,12 @@ namespace Solver {
 
 	void achieve_motif(const string &motif) {
 		if (found_motif.find(motif) != found_motif.end()) return;
+
 		found_motif.insert(motif);
 
 		Checker::check_motif(motif);
+
+		if (motif == "CATCCACATCAAGATCGAC") cerr << motif.length() << "\n";
 
 		cout << motif << "\n";
 	}

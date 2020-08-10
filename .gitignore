@@ -8,4 +8,4 @@ Data/
 .idea/
 .vscode/
 
-config.txt
+*.txt

@@ -7,6 +7,7 @@
 
 #include "template.cpp"
 #include "config.cpp"
+#include "constant.cpp"
 
 namespace Problem {
 	int n;		// number of sequences
@@ -24,11 +25,12 @@ namespace Problem {
 
 			string sequence;
 			getline(input_file, sequence);
+			if (sequence.empty()) continue;
+			while (!in(sequence[sequence.length()-1], Constant::ALPHABET))
+				sequence.erase(sequence.length()-1);
+
 			sequences.push_back(sequence);
-
 		}
-
-		while (sequences.back().empty()) sequences.pop_back();
 
 		n = sequences.size();
 		l = Config::l;
@@ -39,9 +41,9 @@ namespace Problem {
 	}
 
 	void print_sequences() {
-		cout << "Number of sequences:\t" << n << "\n\n";
+		cerr << "Number of sequences:\t" << n << "\n\n";
 		for(const auto& sequence : sequences)
-			cout << "Length: " << sequence.length() << "\n" << sequence << "\n\n";
+			cerr << "Length: " << sequence.length() << "\n" << sequence << "\n\n";
 	}
 
 	int hamming_distance(const string &motif, int seq_i, int seq_pivot) {

@@ -10,7 +10,7 @@
 
 namespace Checker {
 	void assertFailure(const string &motif, const string &message) {
-		cout << "Failed Motif: " << motif << "\n" << message << "\n";
+		cerr << "Failed Motif: " << motif << "\n" << message << "\n";
 		exit(0);
 	}
 
