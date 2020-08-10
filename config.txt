@@ -1,4 +1,0 @@
-Input:  Data/Real/dm01r.fasta
-l: 20
-d1: 3
-d2: 1

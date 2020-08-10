@@ -4,12 +4,17 @@
 
 #include "config.cpp"
 #include "problem.cpp"
+#include "solver.cpp"
+#include "checker.cpp"
 
-int main() {
+int main(int argc, char *argv[]) {
 	Config::load_config_from_file();
-	Config::print_config();
+//	Config::print_config();
 
-	Problem::initialize(Config::input);
-	Problem::print_sequences();
+	Problem::initialize();
+//	Problem::print_sequences();
 
+	Solver::solve();
+
+	return 0;
 }

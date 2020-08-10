@@ -9,6 +9,8 @@
 
 namespace Constant {
     const string CONFIG_FILE_NAME = "config.txt";
+
+    const char ALPHABET[] = {'A', 'C', 'G', 'T'};
 }
 
 #endif

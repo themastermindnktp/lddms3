@@ -23,20 +23,18 @@ namespace Config {
         while (config_file.good()) {
             string key;
             config_file >> key;
-            transform(key.begin(), key.end(), key.begin(), ::toupper);
-            if (key == "INPUT:") config_file >> input;
-            else if (key == "OUTPUT:") config_file >> output;
-            else if (key == "L:") config_file >> l;
-            else if (key == "D1:") config_file >> d1;
-            else if (key == "D2:") config_file >> d2;
+            transform(key.begin(), key.end(), key.begin(), ::tolower);
+            if (key == "input:") config_file >> input;
+            else if (key == "output:") config_file >> output;
+            else if (key == "l:") config_file >> l;
+            else if (key == "d1:") config_file >> d1;
+            else if (key == "d2:") config_file >> d2;
         }
 
-        if (input.empty() || l == -1 || d1 == -1 || d2 == -1)
-        {
+        if (input.empty() || l == -1 || d1 == -1 || d2 == -1) {
             cerr << "Config is missing field(s)!\n";
             exit(0);
         }
-
     }
 
     void print_config() {
@@ -46,7 +44,6 @@ namespace Config {
     	cout << "d1:\t\t\t" << d1 << "\n";
     	cout << "d2:\t\t\t" << d2 << "\n";
     }
-
 }
 
 
